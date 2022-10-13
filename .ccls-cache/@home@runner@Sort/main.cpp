@@ -1,24 +1,32 @@
 #include <iostream>
 using namespace std;
+void printArray(const int list[], int listSize);
+int indexLargestElement(const int list[], int listSize);
 
-
-int main() {//5 3 4 1 7 2
-int n;
+int main() {
+  int n;
   cin >> n;
-  int smalls_Days;
-  int u = 0;
-  for (int i = 0; i < n; i++)
-    {
-      int day;
-      cin >> day;
-      
-      if (smalls_Days > day)
-      {
-        smalls_Days = day;
-        u++;
-        }
-    }
-  cout << u;
+  int C;
+  cin >> C;
+  const int ARRAY_SIZE = n;
   
-return 0;
   }
+void printArray(const int list[], int listSize) {
+  int index;
+
+  for (index = 0; index < listSize; index++)
+    cout << list[index] << " ";
+
+  cout << endl;
+  return;
+}
+int indexLargestElement(const int list[], int listSize)
+{
+  int maxIndex = 0;
+  for (int index = 1; index < listSize; index++)
+    {
+      if (list[maxIndex] < list[index])
+        maxIndex = index;
+    }
+  return maxIndex;
+}
